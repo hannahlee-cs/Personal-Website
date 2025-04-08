@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Hannah-Lee</title>
+</head>
+
+<script>
+    function searchSection() {
+      const searchValue = document.getElementById("searchInput").value.toLowerCase();
+      const section = document.getElementById("searchable-section");
+
+      // Clear previous highlights
+      const spans = section.querySelectorAll("span.highlight");
+      spans.forEach(span => {
+        span.outerHTML = span.innerText;
+      });
+
+      if (searchValue === "") return;
+
+      // Search and highlight
+      const regex = new RegExp(`(${searchValue})`, 'gi');
+
+      section.innerHTML = section.innerHTML.replace(regex, `<span class="highlight">$1</span>`);
+    }
+</script>
+
+<body>
+
+  <!-- Navigation Tabs -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://www.pngkey.com/png/full/359-3592672_ut-logo-university-of-texas-at-austin.png" alt="logo">
+    </div>
+    <div class="tabs">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('projects') }}">Expirence</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </div>
+  </nav>
+
+  <div class="title-search-container">
+    <div class="styled-box">
+        <h1 style="color: white; text-align: left; font-size: 70px; margin-bottom: 0px;">My Resume:</h1>
+        <h1 style="color: #dcdcdc; text-align: left; font-size: 20px; margin-top: 0px;">Thank you for looking at my expirence!</h1>
+        <hr class="separator">
+    </div>
+    <div class="search-container">
+        <h1 style="color: black; text-align: center; font-size: 45px; margin-bottom: 0px; margin-left: 10px;">Search:</h1>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+        <button  class="styled-button" onclick="searchSection()">Search</button>
+    </div>
+  </div>
+
+  <div class= "resume-search-section" >
+      <div id="searchable-section" class="resume-section" style="width: 65%; padding-right: 10px; background-color: white;">
+        <!--EDUCATION-->
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 30px;">EDUCATION</h1>
+        <div class="separator-black" style="margin-top: 0px;"></div>
+        <!--college-->
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">University of Texas at Austin</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Expected Graduation Date: May 2028</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Current GPA: 4.00</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Relevant Coursework: Introduction to Programming, Differential and Integral Calculus, Multivariable and Sequential Calculus</h1>
+        <!--highschool-->
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">Midway High School</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">August 2020-May 2024</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">GPA: 109.32</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Rank: 3/700</h1>
+        <!--SKILLS-->
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 30px;">SKILLS</h1>
+        <div class="separator-black" style="margin-top: 0px;"></div>
+        <!--Programming languages:-->
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Programming Langauges: Java, Python, C</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Software Engineering: CSS, JavaScript, Flask, HTML</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Data Analysis/Data Science: SQL</h1>
+        <!--Platforms:-->
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Platforms: VS Code, GitHub, AutoDesk Fusion, Cinema4D, Eclispe</h1>
+        <!--EXPIRENCE-->
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 30px;">EXPIRENCE</h1>
+        <div class="separator-black" style="margin-top: 0px;"></div>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">Kumon Inc.</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">August 2022-August 2024</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Title: Senior Employee</h1>
+        <ul style="margin-left: 35px; font-size: 15px; font-weight: lighter;">
+            <li>Tutored students ranging from K-12 in both mathematics and reading curriculum fostering above grade-level comprehension in majority of students enrolled at the center</li>
+            <li>Tasked with training new employees in the grading, organization, and teaching process of the center </li>
+        </ul>
+        <!--PROJECTS-->
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 30px;">PROJECTS</h1>
+        <div class="separator-black" style="margin-top: 0px;"></div>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">Autonomous Car</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">January 2025-Present</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Student-led Robotics/Machine Learning Project </h1>
+        <ul style="margin-left: 35px; font-size: 15px; font-weight: lighter;">
+            <li>Tested and optimized sensor technologies on a small robotic car, evaluating performance and enhancing data collection for robotics projects</li>
+            <li>Developed and applied machine learning algorithms to improve the robotic car’s decision-making processes, integrating CAD designs for efficient functionality </li>
+        </ul>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">KritterRun Language App </h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">September 2024-Present</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">3D Design and Programming Assistant</h1>
+        <ul style="margin-left: 35px; font-size: 15px; font-weight: lighter;">
+            <li>Tasked with designing 3D models and creating animation for KritterRun using Cinema 4D</li>
+            <li>Collaborated with a startup game design company, gaining guidance and insights from an experienced game developer </li>
+            <li>Utilized visual scripting languages, including Blueprints, to enhance project functionality</li>
+        </ul>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">Personal Website </h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">April 2025-Present</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Personal Website/Software Engineeing Project</h1>
+        <ul style="margin-left: 35px; font-size: 15px; font-weight: lighter;">
+            <li>Implemented various software engineering langauges including HTML, CSS, JavaScript, and flask to create a fully functioning website with complex functions</li>
+            <li>Structed complex features such as an on-site search mechanism using JavaScript and flask to enhance user-interface</li>
+            <li>Used industry-standard documentation/formatting to streamline project functionality and design</li>
+        </ul>
+        <!--CERTIFICATIONS-->
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 30px;">CERTIFICATIONS</h1>
+        <div class="separator-black" style="margin-top: 0px;"></div>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">Harvard Univeristy (Online)</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">December 2024-Present</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">CS50: Introduction to Computer Science	</h1>
+        <ul style="margin-left: 35px; font-size: 15px; font-weight: lighter;">
+            <li>Learned C and Python for developing efficient algorithms, data structures, and problem-solving techniques as well as utilized SQL for database management, querying, and data manipulation</li>
+            <li>Developed web applications using HTML, CSS, and JavaScript to create dynamic, responsive user interfaces</li>
+            <li>Applied Flask for building back-end frameworks, handling requests, and managing server-side logic </li>
+        </ul>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">CoachUT</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">January 2025-March 2025</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">UT Austin Leadership Program </h1>
+        <ul style="margin-left: 35px; font-size: 15px; font-weight: lighter;">
+            <li>Received executive-quality leadership coaching through online workshops focused on team collaboration, problem solving, and strategic decision making </li>
+            <li>Developed skills focused on self-management and adaptive leadership styles</li>
+        </ul>
+        <!--COMMUNITY-->
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 30px;">LEADERSHIP EXPERIENCE & COMMUNITY INVOLVEMENT</h1>
+        <div class="separator-black" style="margin-top: 0px;"></div>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">UT Computer Science Transfer’s Society (CSTS)</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">August 2024-Present</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">Junior Officer</h1>
+        <ul style="margin-left: 35px; font-size: 15px; font-weight: lighter;">
+            <li>Provided a community around prospective computer science transfer students to facilitate STEM events including hackathons and internship events</li>
+            <li>Guided prospective transfers students through the CNS internal transfer process through essay and resume advice</li>
+        </ul>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">Engineering and Computational Learning of Artificial Intelligence and Robotics (ECLAIR) </h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">December 2024-Present</h1>
+        <ul style="margin-left: 35px; font-size: 15px; font-weight: lighter;">
+            <li>Collaborated with a multidisciplinary team to design, prototype, and implement innovative adaptations to engineering, robotics, and AI technologies </li>
+            <li>Utilized CAD software and applied machine learning algorithms to optimize robotics performance </li>
+        </ul>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">UT Austin STEM Buddies</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">August 2024-Present</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 20px; font-weight: bold;">UT Japanese Association</h1>
+        <h1 style="text-align: left; margin-bottom: 0px; margin-left: 30px; font-size: 15px; font-weight: lighter;">August 2024-Present</h1>
+        <!--HONORS-->
+        <h1 style="text-align: left; margin-bottom: 0px; font-size: 30px;">HONORS/AWARDS</h1>
+        <div class="separator-black" style="margin-top: 0px;"></div>
+        <ul style="margin-left: 35px; font-size: 15px; font-weight: lighter;">
+            <li>University Honors Fall 2024</li>
+            <li>Dean's List: Cum Laude, Fall 2024</li>
+            <li>NCWIT Aspirations in Computing: Rising Star 2020, Honorable Mention 2021-2024</li>
+            <li>AP Scholar 2024-2025</li>
+        </ul>
+
+
+
+
+      </div>
+
+      <div class="styled-box-2" style="width: 35%; height: 2000px; padding-left: 10px; display: flex; justify-content: center; align-items: center; text-align: center;">
+      </div>
+  </div>

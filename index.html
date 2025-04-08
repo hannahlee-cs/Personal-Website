@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Hannah-Lee</title>
+</head>
+<body>
+
+  <!-- Navigation Tabs -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://www.pngkey.com/png/full/359-3592672_ut-logo-university-of-texas-at-austin.png" alt="logo">
+    </div>
+    <div class="tabs">
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('projects') }}">Expirence</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Image Over Text -->
+  <div class="text-image-container">
+    <div class="image-side">
+        <img src="https://www.bing.com/images/blob?bcid=SGTueUZGlEsIac5nNvTNhzM2nDkV.....6E" alt="Overlay Image" class="overlay-image" />
+    </div>
+    <div class="contact-box-container">
+      <div class="square-big" id="big-square">
+          <div class="content">
+            <h1>Hannah Lee</h1>
+            <p>Student at the University of Texas at Austin</p>
+            <div class="separator-black" style="margin-top: 0px;"></div>
+            <p class="intro">Hi there! I'm Hannah, welcome to my page! I am a student at the University of Texas at Austin interested in Machine Learning.</p>
+            <div class="about-side">
+              <p class="intro" style="font-weight: bold;">What I Can Offer</p>
+              <p>I have extensive experience with a variety of programming languages, including Java, Python,
+                and C, as well as web and software development technologies such as HTML, JavaScript, Flask,
+                and CSS. At the same time, I’ve had the opportunity to work on machine learning projects
+                involving NEAT, reinforcement learning, and neural network techniques. My background includes
+                both professional settings and student-led initiatives, giving me the confidence and
+                adaptability to contribute effectively in a wide range of collaborative environments.
+                Currently, I am looking for internships/projects that align with my intrests in software
+                engineering and machine learning. Please feel free to reach out if you are intrested!</p>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="general-about-container">
+    <div class="general-side">
+      <h2 style="color: white;">General Information</h2>
+      <hr class="separator" style="margin: 5px; color: white;">
+      <div class="info-item">
+        <i class="fas fa-envelope" style="color: white; margin-right: 5px;"></i>
+        <p> hannahgabriellelee@gmail.com</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-graduation-cap" style="color: white; margin-right: 5px;"></i>
+        <p>University of Texas at Austin</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt" style="color: white; margin-right: 5px;"></i>
+        <p>  Located in Austin, Texas</p>
+      </div>
+      <img style= "width: 250px; margin-top: 20px; height: 250px; margin-left: 15%;" src="https://www.pngkey.com/png/full/38-384797_texas-png.png" alt="logo">
+     </div>
+     <!--
+    <div class="about-side">
+      <p class="intro" style="font-weight: bold;">What I Can Offer</p>
+      <hr class="separator" style="margin: 5px; color: black;">
+      <p>I have extensive experience with a variety of programming languages, including Java, Python,
+        and C, as well as web and software development technologies such as HTML, JavaScript, Flask,
+        and CSS. At the same time, I’ve had the opportunity to work on machine learning projects
+        involving NEAT, reinforcement learning, and neural network techniques. My background includes
+        both professional settings and student-led initiatives, giving me the confidence and
+        adaptability to contribute effectively in a wide range of collaborative environments.
+        Currently, I am looking for internships/projects that align with my intrests in software
+        engineering and machine learning. Please feel free to reach out if you are intrested!</p>
+    </div>
+    -->
+  </div>
+</body>
+</html>
+
